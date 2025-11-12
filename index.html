@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritesh Chavan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            color: #888;
+            font-style: italic;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        section:nth-child(6) {
+            animation-delay: 1s;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .interest {
+            background-color: #1a1a1a;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .link {
+            color: #e0e0e0;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+
+        .link:hover {
+            border-color: #e0e0e0;
+        }
+
+        .status {
+            display: inline-block;
+            background-color: #222;
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #555;
+            font-size: 0.8rem;
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Anime Girl Section */
+        .anime-container {
+            margin: 2rem auto;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px #333;
+        }
+
+        .anime-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        /* YouTube Music Widget */
+        .music-widget {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-top: 1rem;
+            max-width: 350px;
+            transition: all 0.3s;
+        }
+
+        .music-widget:hover {
+            border-color: #555;
+            background-color: #151515;
+        }
+
+        .youtube-music-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #FF0000, #FF3333);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '♫';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+        }
+
+        .logo-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: #e0e0e0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .control-btn:hover {
+            color: #fff;
+        }
+
+        .play-btn {
+            width: 32px;
+            height: 32px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .play-btn:hover {
+            background-color: #444;
+        }
+
+        .play-btn::before {
+            content: '▶';
+            font-size: 12px;
+            margin-left: 2px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .anime-container {
+                width: 180px;
+                height: 180px;
+            }
+
+            .music-widget {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ritesh Chavan</h1>
+        <p class="tagline">Currently exploring opportunities</p>
+    </header>
+
+    <section id="about">
+        <h2>Currently</h2>
+        <p>Between professional engagements. Using this time to deepen knowledge and explore new directions.</p>
+        <p class="status">Available for projects and opportunities</p>
+
+        <!-- Anime Girl GIF -->
+        <div class="anime-container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGl6OHowN2RnaXZrcG5hbWduaHYxa2MwbDUyOWJub2t4cXducDg3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/DY4GxWN6Ml3oVexySy/giphy.gif"
+                alt="Anime girl" class="anime-gif">
+        </div>
+    </section>
+
+    <section id="interests">
+        <h2>Interests</h2>
+        <div class="interests">
+            <span class="interest">Anime</span>
+            <span class="interest">Music</span>
+            <span class="interest">Farming</span>
+            <span class="interest">Technology</span>
+            <span class="interest">Reading</span>
+            <span class="interest">Agriculture</span>
+            <span class="interest">Digital Minimalism</span>
+        </div>
+    </section>
+
+    <section id="music">
+        <h2>Soundtrack</h2>
+        <p>The audio landscape of my current existence:</p>
+
+        <a href="https://music.youtube.com/playlist?list=PLvGJjWinfBG2G4WVlEb7LsyAIpd9jDJi-&si=3cTxECsVeaoW3lX4"
+            target="_blank" class="music-widget">
+            <div class="youtube-music-logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">My Playlist</span>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn">⏮</button>
+                <div class="play-btn"></div>
+                <button class="control-btn">⏭</button>
+            </div>
+        </a>
+    </section>
+
+    <section id="projects">
+        <h2>Focus Areas</h2>
+        <p>Exploring the intersection of agriculture and technology. Developing systems that work while no one's
+            watching.</p>
+        <p>Building skills in Flutter and digital tools that serve practical purposes.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you have opportunities or projects that might align with my interests:</p>
+        <div class="links">
+            <a href="mailto:riteshchavan@duck.com" class="link">Email</a>
+            <a href="https://github.com/ritz541" class="link">GitHub</a>
+            <a href="https://www.linkedin.com/in/riteshchavanpatil/" class="link">LinkedIn</a>
+            <a href="https://x.com/ritzchavanpatil" class="link">X</a>
+            <a href="https://instagram.com/ritzchavanpatil" class="link">Instagram</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Updated recently. Response times vary.</p>
+    </footer>
+
+    <script>
+        // Simple typewriter effect for header
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('h1');
+            const text = header.textContent;
+            header.textContent = '';
+
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    header.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+
+            typeWriter();
+
+            // Music widget interaction
+            const musicWidget = document.querySelector('.music-widget');
+            const playBtn = document.querySelector('.play-btn');
+
+            let isPlaying = false;
+
+            playBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                isPlaying = !isPlaying;
+                playBtn.innerHTML = isPlaying ? '❚❚' : '▶';
+                playBtn.style.fontSize = isPlaying ? '14px' : '12px';
+                playBtn.style.marginLeft = isPlaying ? '0' : '2px';
+            });
+
+            // Prevent control buttons from navigating when clicked
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
