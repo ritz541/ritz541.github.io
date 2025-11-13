@@ -18,16 +18,18 @@
             color: #e0e0e0;
             line-height: 1.6;
             padding: 2rem;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         header {
-            margin-bottom: 3rem;
-            border-bottom: 1px solid #333;
-            padding-bottom: 1rem;
-            position: relative;
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
         h1 {
@@ -39,105 +41,6 @@
         .tagline {
             color: #888;
             font-style: italic;
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-        }
-
-        section:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        section:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        section:nth-child(4) {
-            animation-delay: 0.6s;
-        }
-
-        section:nth-child(5) {
-            animation-delay: 0.8s;
-        }
-
-        section:nth-child(6) {
-            animation-delay: 1s;
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #b0b0b0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .interest {
-            background-color: #1a1a1a;
-            padding: 0.5rem 1rem;
-            border-radius: 3px;
-            font-size: 0.9rem;
-        }
-
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .link {
-            color: #e0e0e0;
-            text-decoration: none;
-            border-bottom: 1px solid #333;
-            padding-bottom: 2px;
-            transition: border-color 0.3s;
-        }
-
-        .link:hover {
-            border-color: #e0e0e0;
-        }
-
-        .status {
-            display: inline-block;
-            background-color: #222;
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        footer {
-            margin-top: 3rem;
-            text-align: center;
-            color: #555;
-            font-size: 0.8rem;
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Anime Girl Section */
@@ -167,9 +70,11 @@
             border: 1px solid #333;
             border-radius: 8px;
             padding: 12px 16px;
-            margin-top: 1rem;
-            max-width: 350px;
+            margin: 2rem 0;
+            width: 350px;
             transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
         }
 
         .music-widget:hover {
@@ -246,6 +151,40 @@
             margin-left: 2px;
         }
 
+        /* Social Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover {
+            border-color: #e0e0e0;
+            background-color: #1a1a1a;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #555;
+            font-size: 0.8rem;
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            width: 100%;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 1rem;
@@ -255,18 +194,23 @@
                 font-size: 1.5rem;
             }
 
-            .links {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
             .anime-container {
                 width: 180px;
                 height: 180px;
             }
 
             .music-widget {
-                max-width: 100%;
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .social-links {
+                gap: 0.8rem;
+            }
+
+            .social-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -275,97 +219,46 @@
 <body>
     <header>
         <h1>Ritesh Chavan</h1>
-        <p class="tagline">Currently exploring opportunities</p>
+        <p class="tagline">Find me around the web</p>
     </header>
 
-    <section id="about">
-        <h2>Currently</h2>
-        <p>Between professional engagements. Using this time to deepen knowledge and explore new directions.</p>
-        <p class="status">Available for projects and opportunities</p>
+    <!-- Anime Girl GIF -->
+    <div class="anime-container">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGl6OHowN2RnaXZrcG5hbWduaHYxa2MwbDUyOWJub2t4cXducDg3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/DY4GxWN6Ml3oVexySy/giphy.gif"
+            alt="Anime girl" class="anime-gif">
+    </div>
 
-        <!-- Anime Girl GIF -->
-        <div class="anime-container">
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGl6OHowN2RnaXZrcG5hbWduaHYxa2MwbDUyOWJub2t4cXducDg3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/DY4GxWN6Ml3oVexySy/giphy.gif"
-                alt="Anime girl" class="anime-gif">
+    <!-- YouTube Music Widget -->
+    <a href="https://music.youtube.com/playlist?list=PLvGJjWinfBG2G4WVlEb7LsyAIpd9jDJi-&si=3cTxECsVeaoW3lX4"
+        target="_blank" class="music-widget">
+        <div class="youtube-music-logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">My Playlist</span>
         </div>
-    </section>
-
-    <section id="interests">
-        <h2>Interests</h2>
-        <div class="interests">
-            <span class="interest">Anime</span>
-            <span class="interest">Music</span>
-            <span class="interest">Farming</span>
-            <span class="interest">Technology</span>
-            <span class="interest">Reading</span>
-            <span class="interest">Agriculture</span>
-            <span class="interest">Digital Minimalism</span>
+        <div class="player-controls">
+            <button class="control-btn">⏮</button>
+            <div class="play-btn"></div>
+            <button class="control-btn">⏭</button>
         </div>
-    </section>
+    </a>
 
-    <section id="music">
-        <h2>Soundtrack</h2>
-        <p>The audio landscape of my current existence:</p>
-
-        <a href="https://music.youtube.com/playlist?list=PLvGJjWinfBG2G4WVlEb7LsyAIpd9jDJi-&si=3cTxECsVeaoW3lX4"
-            target="_blank" class="music-widget">
-            <div class="youtube-music-logo">
-                <div class="logo-icon"></div>
-                <span class="logo-text">My Playlist</span>
-            </div>
-            <div class="player-controls">
-                <button class="control-btn">⏮</button>
-                <div class="play-btn"></div>
-                <button class="control-btn">⏭</button>
-            </div>
-        </a>
-    </section>
-
-    <section id="projects">
-        <h2>Focus Areas</h2>
-        <p>Exploring the intersection of agriculture and technology. Developing systems that work while no one's
-            watching.</p>
-        <p>Building skills in Flutter and digital tools that serve practical purposes.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you have opportunities or projects that might align with my interests:</p>
-        <div class="links">
-            <a href="mailto:riteshchavan@duck.com" class="link">Email</a>
-            <a href="https://github.com/ritz541" class="link">GitHub</a>
-            <a href="https://www.linkedin.com/in/riteshchavanpatil/" class="link">LinkedIn</a>
-            <a href="https://x.com/ritzchavanpatil" class="link">X</a>
-            <a href="https://instagram.com/ritzchavanpatil" class="link">Instagram</a>
-        </div>
-    </section>
+    <!-- Social Handles -->
+    <div class="social-links">
+        <a href="mailto:riteshchavan@duck.com" class="social-link">Email</a>
+        <a href="https://github.com/ritz541" class="social-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/riteshchavanpatil/" class="social-link">LinkedIn</a>
+        <a href="https://x.com/ritzchavanpatil" class="social-link">X</a>
+        <a href="https://instagram.com/ritzchavanpatil" class="social-link">Instagram</a>
+    </div>
 
     <footer>
-        <p>Updated recently. Response times vary.</p>
+        <p>Updated recently</p>
     </footer>
 
     <script>
-        // Simple typewriter effect for header
+        // Music widget interaction
         document.addEventListener('DOMContentLoaded', function () {
-            const header = document.querySelector('h1');
-            const text = header.textContent;
-            header.textContent = '';
-
-            let i = 0;
-            const typeWriter = () => {
-                if (i < text.length) {
-                    header.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                }
-            };
-
-            typeWriter();
-
-            // Music widget interaction
-            const musicWidget = document.querySelector('.music-widget');
             const playBtn = document.querySelector('.play-btn');
-
             let isPlaying = false;
 
             playBtn.addEventListener('click', function (e) {
