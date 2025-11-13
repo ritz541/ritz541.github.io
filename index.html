@@ -28,7 +28,7 @@
         }
 
         header {
-            margin-bottom: 2rem;
+            /* margin-bottom: 2rem; */
             text-align: center;
         }
 
@@ -43,22 +43,20 @@
             font-style: italic;
         }
 
-        /* Anime Girl Section */
+        /* Anime Girl Section - Clean and free */
         .anime-container {
-            margin: 2rem auto;
-            width: 200px;
-            height: 200px;
+            /* margin: 2rem auto; */
+            width: 700px;
+            /* Reduced by 3 times from 1000px */
+            height: 550px;
+            /* Reduced by 3 times from 1000px */
             position: relative;
-            border-radius: 5px;
-            overflow: hidden;
-            border: 1px #333;
         }
 
         .anime-gif {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
+            object-fit: contain;
         }
 
         /* YouTube Music Widget */
@@ -139,6 +137,7 @@
             align-items: center;
             justify-content: center;
             transition: background-color 0.2s;
+            cursor: pointer;
         }
 
         .play-btn:hover {
@@ -195,8 +194,8 @@
             }
 
             .anime-container {
-                width: 180px;
-                height: 180px;
+                width: 280px;
+                height: 280px;
             }
 
             .music-widget {
@@ -213,6 +212,13 @@
                 font-size: 0.8rem;
             }
         }
+
+        @media (max-width: 400px) {
+            .anime-container {
+                width: 250px;
+                height: 250px;
+            }
+        }
     </style>
 </head>
 
@@ -222,10 +228,10 @@
         <p class="tagline">Find me around the web</p>
     </header>
 
-    <!-- Anime Girl GIF -->
+    <!-- Anime Girl GIF - Clean and free -->
     <div class="anime-container">
-        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGl6OHowN2RnaXZrcG5hbWduaHYxa2MwbDUyOWJub2t4cXducDg3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/DY4GxWN6Ml3oVexySy/giphy.gif"
-            alt="Anime girl" class="anime-gif">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXpsOWpmMTV1Nm5laGw3eTF1MHFteDV3bWFrbGk4cHRocmloMGNyNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eZAih7aau24Fz5UOqe/giphy.gif"
+            alt="Anime girl dancing" class="anime-gif">
     </div>
 
     <!-- YouTube Music Widget -->
