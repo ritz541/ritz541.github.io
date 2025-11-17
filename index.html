@@ -5,221 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ritesh Chavan</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Courier New', monospace;
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
-            padding: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        header {
-            /* margin-bottom: 2rem; */
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-        }
-
-        .tagline {
-            color: #888;
-            font-style: italic;
-        }
-
-        /* Anime Girl Section - Clean and free */
-        .anime-container {
-            /* margin: 2rem auto; */
-            width: 700px;
-            /* Reduced by 3 times from 1000px */
-            height: 550px;
-            /* Reduced by 3 times from 1000px */
-            position: relative;
-        }
-
-        .anime-gif {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* YouTube Music Widget */
-        .music-widget {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #111;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 12px 16px;
-            margin: 2rem 0;
-            width: 350px;
-            transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .music-widget:hover {
-            border-color: #555;
-            background-color: #151515;
-        }
-
-        .youtube-music-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(135deg, #FF0000, #FF3333);
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .logo-icon::before {
-            content: '♫';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 12px;
-        }
-
-        .logo-text {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .player-controls {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .control-btn {
-            background: none;
-            border: none;
-            color: #e0e0e0;
-            cursor: pointer;
-            font-size: 16px;
-            transition: color 0.2s;
-        }
-
-        .control-btn:hover {
-            color: #fff;
-        }
-
-        .play-btn {
-            width: 32px;
-            height: 32px;
-            background-color: #333;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-            cursor: pointer;
-        }
-
-        .play-btn:hover {
-            background-color: #444;
-        }
-
-        .play-btn::before {
-            content: '▶';
-            font-size: 12px;
-            margin-left: 2px;
-        }
-
-        /* Social Links */
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            color: #e0e0e0;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid #333;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .social-link:hover {
-            border-color: #e0e0e0;
-            background-color: #1a1a1a;
-        }
-
-        footer {
-            margin-top: 3rem;
-            text-align: center;
-            color: #555;
-            font-size: 0.8rem;
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-            width: 100%;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .anime-container {
-                width: 280px;
-                height: 280px;
-            }
-
-            .music-widget {
-                width: 100%;
-                max-width: 350px;
-            }
-
-            .social-links {
-                gap: 0.8rem;
-            }
-
-            .social-link {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .anime-container {
-                width: 250px;
-                height: 250px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -248,6 +34,13 @@
         </div>
     </a>
 
+    <!-- My Apps Button -->
+    <a href="dreamli/index.html" class="apps-button">
+        <span class="apps-icon">📱</span>
+        <span class="apps-text">Check out my apps</span>
+        <span class="apps-arrow">→</span>
+    </a>
+
     <!-- Social Handles -->
     <div class="social-links">
         <a href="mailto:riteshchavan@duck.com" class="social-link">Email</a>
@@ -261,31 +54,9 @@
         <p>Updated recently</p>
     </footer>
 
-    <script>
-        // Music widget interaction
-        document.addEventListener('DOMContentLoaded', function () {
-            const playBtn = document.querySelector('.play-btn');
-            let isPlaying = false;
-
-            playBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                isPlaying = !isPlaying;
-                playBtn.innerHTML = isPlaying ? '❚❚' : '▶';
-                playBtn.style.fontSize = isPlaying ? '14px' : '12px';
-                playBtn.style.marginLeft = isPlaying ? '0' : '2px';
-            });
-
-            // Prevent control buttons from navigating when clicked
-            document.querySelectorAll('.control-btn').forEach(btn => {
-                btn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
+
+</html>
 
 </html>
