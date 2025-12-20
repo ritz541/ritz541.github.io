@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
-import { MARATHI_NAME, SOCIAL_LINKS, LOCATION, YOUTUBE_PLAYLIST_EMBED, YOUTUBE_PLAYLIST_DIRECT, PORTRAIT_SIDE, PORTRAIT_FRONT } from './constants';
+import { MARATHI_NAME, SOCIAL_LINKS, LOCATION, YOUTUBE_PLAYLIST_EMBED, YOUTUBE_PLAYLIST_DIRECT, PORTRAIT_SIDE, PORTRAIT_FRONT, IMAGE_FIELD } from './constants';
+import QuantumString from './components/QuantumString';
+import MarathiRain from './components/MarathiRain';
 
 // Loading Screen Component
 const LoadingScreen: React.FC<{ isLoading: boolean }> = ({ isLoading }) => (
@@ -65,7 +67,15 @@ const App: React.FC = () => {
             {/* Loading Screen */}
             <LoadingScreen isLoading={isLoading} />
 
+            {/* Background Effects */}
+            <MarathiRain />
+
             <Navbar onImageSelect={setEnlargedImage} />
+
+            {/* Quantum String - Horizontal tripwire crossing center */}
+            <div className="fixed top-1/2 left-0 w-full h-24 -translate-y-1/2 z-[40] pointer-events-auto">
+                <QuantumString className="w-full h-full" />
+            </div>
 
             {/* AI Human Link - Compact on mobile */}
             <a
