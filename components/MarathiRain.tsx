@@ -59,9 +59,11 @@ const MarathiRain: React.FC = () => {
                 // Bright Heads Logic
                 const isBright = Math.random() > 0.95;
                 if (isBright) {
-                    ctx.fillStyle = '#ffffff';
-                    ctx.shadowBlur = 8;
-                    ctx.shadowColor = '#ffffff';
+                    const neonColors = ['#ccff00', '#ff2d55', '#00f0ff']; // Acid Green, Hot Pink, Electric Blue
+                    const color = neonColors[Math.floor(Math.random() * neonColors.length)];
+                    ctx.fillStyle = color;
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = color;
                 } else {
                     ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
                     ctx.shadowBlur = 0;
