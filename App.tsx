@@ -1,11 +1,6 @@
-
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import { MARATHI_NAME, SOCIAL_LINKS, LOCATION, YOUTUBE_PLAYLIST_EMBED, YOUTUBE_PLAYLIST_DIRECT, PORTRAIT_SIDE, PORTRAIT_FRONT } from './constants';
-
-
-
-
 
 // Loading Screen Component
 const LoadingScreen: React.FC<{ isLoading: boolean }> = ({ isLoading }) => (
@@ -17,6 +12,15 @@ const LoadingScreen: React.FC<{ isLoading: boolean }> = ({ isLoading }) => (
         <p className="mt-6 text-[10px] tracking-[0.5em] text-white/30 uppercase font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>Igniting the Field</p>
     </div>
 );
+
+// Social Icons Data
+const SOCIAL_ICONS: Record<string, React.ReactNode> = {
+    'Email': <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />,
+    'GitHub': <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />,
+    'LinkedIn': <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />,
+    'X': <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />,
+    'Instagram': <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.5 3h9a4.5 4.5 0 014.5 4.5v9a4.5 4.5 0 01-4.5 4.5h-9A4.5 4.5 0 013 16.5v-9A4.5 4.5 0 017.5 3z" />
+};
 
 const App: React.FC = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -50,11 +54,9 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <div className="relative selection:bg-[#ff2d55] selection:text-white min-h-screen bg-[#030303] overflow-x-hidden">
+        <div className="relative selection:bg-[#ff2d55] selection:text-white min-h-screen bg-[#030303] overflow-hidden">
             {/* Loading Screen */}
             <LoadingScreen isLoading={isLoading} />
-
-
 
             <Navbar onImageSelect={setEnlargedImage} />
 
@@ -149,7 +151,7 @@ const App: React.FC = () => {
             </div>
 
             {/* Hero: The Intimate Entry */}
-            <section className="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-8 pt-32 md:pt-0 overflow-hidden z-20">
+            <section className="relative h-screen flex flex-col items-center justify-center px-4 md:px-8 overflow-hidden z-20">
                 <div
                     className="absolute inset-0 flex items-center justify-center select-none pointer-events-none z-0"
                     style={{
@@ -162,7 +164,7 @@ const App: React.FC = () => {
                     </h2>
                 </div>
 
-                <div className="z-10 text-center max-w-7xl reveal-up px-2">
+                <div className="z-10 text-center max-w-7xl reveal-up px-2 flex flex-col items-center">
                     <p className="serif-font italic text-xl md:text-5xl text-white/30 mb-4 md:mb-8 lowercase">
                         the radical leisure of
                     </p>
@@ -170,7 +172,32 @@ const App: React.FC = () => {
                         Ritesh <br /> Chavan Patil
                     </h1>
 
-                    <div className="flex flex-col items-center justify-center gap-4 md:gap-12 text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.5em] text-white/40 font-bold uppercase mt-6 md:mt-12">
+                    {/* Circular Social Icons */}
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-8">
+                        {SOCIAL_LINKS.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/10 bg-white/5 hover:bg-[#ff2d55] hover:border-[#ff2d55] hover:scale-110 active:scale-95 flex items-center justify-center transition-all duration-300 relative"
+                                title={link.name}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="w-5 h-5 md:w-6 md:h-6 text-white/60 group-hover:text-white transition-colors"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={1.5}
+                                >
+                                    {SOCIAL_ICONS[link.name] || <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />}
+                                </svg>
+                            </a>
+                        ))}
+                    </div>
+
+                    <div className="flex flex-col items-center justify-center gap-4 md:gap-12 text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.5em] text-white/40 font-bold uppercase mt-12">
                         <div
                             className="flex items-center gap-3 cursor-help relative group"
                             onMouseEnter={() => setShowWatcher(true)}
@@ -185,71 +212,13 @@ const App: React.FC = () => {
                             <span>EST. MCMXCIX</span>
                         </div>
                     </div>
-                </div>
 
-                <div className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:gap-4">
-                    <div className="w-px h-8 md:h-16 bg-gradient-to-b from-[#ff2d55]/40 to-transparent"></div>
-                    <span className="text-[7px] md:text-[8px] tracking-[0.3em] md:tracking-[0.5em] text-[#ff2d55]/40 uppercase font-black">SCROLL</span>
-                </div>
-            </section>
-
-            {/* Transition Area: The return to Soil */}
-            <section className="relative z-30 py-16 md:py-32 px-4 md:px-8 flex justify-center border-y border-white/5 bg-gradient-to-b from-transparent to-[#0a0a0a]">
-                <div className="max-w-4xl text-center">
-                    <h3 className="serif-font italic text-2xl md:text-5xl text-white/20 mb-8 md:mb-12 px-4">"The digital world is a playground; the soil is the truth."</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                        {[
-                            { label: "STATUS", val: "RADICAL AUTONOMY" },
-                            { label: "FUTURE", val: "THE HARVEST" },
-                            { label: "BOSSES", val: "ZERO / NEVER" },
-                            { label: "DESIRE", val: "CONSTANT" }
-                        ].map(stat => (
-                            <div key={stat.label} className="flex flex-col gap-1 md:gap-2">
-                                <span className="text-[7px] md:text-[8px] tracking-[0.3em] md:tracking-[0.4em] text-[#ff2d55]/50 font-black">{stat.label}</span>
-                                <span className="text-[9px] md:text-[10px] tracking-[0.1em] md:tracking-[0.2em] text-white/60 font-bold uppercase">{stat.val}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Footer: Text-only Social Links */}
-            <footer className="py-12 md:py-24 px-4 md:px-8 bg-black border-t border-white/5 relative z-30">
-                <div className="max-w-7xl mx-auto flex flex-col items-center">
-
-                    <div className="flex flex-wrap justify-center gap-3 md:gap-x-8 md:gap-y-6 mb-12 md:mb-20 max-w-4xl">
-                        {SOCIAL_LINKS.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs md:text-sm font-black tracking-[0.2em] md:tracking-[0.3em] uppercase text-white/30 px-4 py-2 md:px-8 md:py-3 rounded-full border border-white/10 hover:border-[#ff2d55]/20 hover:bg-[#ff2d55]/[0.05] hover:text-[#ff2d55] active:bg-[#ff2d55]/10 active:text-[#ff2d55] transition-all duration-300 flex items-center justify-center"
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                    </div>
-
-                    <div className="w-full pt-8 md:pt-12 border-t border-white/5 flex flex-col items-center gap-6 md:gap-8 text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.3em] text-white/20 font-bold uppercase">
-                        <div className="marathi-font text-xl md:text-2xl opacity-20 select-none">
-                            {MARATHI_NAME}
-                        </div>
-                        <div className="flex flex-col items-center gap-1">
-                            <span>BOUNDLESS ACCESS &copy; 2025</span>
-                        </div>
-                        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-                            <span>{LOCATION}</span>
-                            <span className="text-[#ff2d55]/40">ONE OF ONE</span>
-                        </div>
-                    </div>
-
-                    {/* AI Made Badge */}
-                    <div className="mt-8 md:mt-12 pt-6 border-t border-white/5 w-full text-center">
+                    {/* AI Made Badge - Fixed at bottom of hero content */}
+                    <div className="mt-8">
                         <span className="text-[7px] md:text-[8px] tracking-[0.3em] md:tracking-[0.4em] text-white/10 uppercase">Crafted with AI</span>
                     </div>
                 </div>
-            </footer>
+            </section>
         </div>
     );
 };
