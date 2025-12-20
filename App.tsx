@@ -9,7 +9,7 @@ const LoadingScreen: React.FC<{ isLoading: boolean }> = ({ isLoading }) => (
         <div className="loading-bar">
             <div className="loading-bar-inner"></div>
         </div>
-        <p className="mt-6 text-[10px] tracking-[0.5em] text-white/30 uppercase font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>Igniting the Field</p>
+        <p className="mt-6 text-[10px] tracking-[0.5em] text-white/30 uppercase font-medium" style={{ fontFamily: 'Gotu, sans-serif' }}>Igniting the Field</p>
     </div>
 );
 
@@ -20,6 +20,14 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
     'LinkedIn': <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />,
     'X': <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />,
     'Instagram': <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.5 3h9a4.5 4.5 0 014.5 4.5v9a4.5 4.5 0 01-4.5 4.5h-9A4.5 4.5 0 013 16.5v-9A4.5 4.5 0 017.5 3z" />
+};
+
+const SOCIAL_STYLES: Record<string, string> = {
+    'Email': 'hover:bg-white hover:border-white hover:text-black',
+    'GitHub': 'hover:bg-white hover:border-white hover:text-black',
+    'LinkedIn': 'hover:bg-white hover:border-white hover:text-black',
+    'X': 'hover:bg-white hover:border-white hover:text-black',
+    'Instagram': 'hover:bg-white hover:border-white hover:text-black'
 };
 
 const App: React.FC = () => {
@@ -54,7 +62,7 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <div className="relative selection:bg-[#ff2d55] selection:text-white min-h-screen bg-[#030303] overflow-hidden">
+        <div className="relative selection:bg-white selection:text-black min-h-screen bg-[#030303] overflow-hidden">
             {/* Loading Screen */}
             <LoadingScreen isLoading={isLoading} />
 
@@ -180,12 +188,12 @@ const App: React.FC = () => {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/10 bg-white/5 hover:bg-[#ff2d55] hover:border-[#ff2d55] hover:scale-110 active:scale-95 flex items-center justify-center transition-all duration-300 relative"
+                                className={`group w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/10 bg-white/5 ${SOCIAL_STYLES[link.name] || 'hover:bg-white hover:border-white hover:text-black'} hover:scale-110 active:scale-95 flex items-center justify-center transition-all duration-300 relative text-white/60`}
                                 title={link.name}
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="w-5 h-5 md:w-6 md:h-6 text-white/60 group-hover:text-white transition-colors"
+                                    className="w-5 h-5 md:w-6 md:h-6 transition-colors"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"

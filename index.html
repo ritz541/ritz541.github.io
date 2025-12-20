@@ -38,13 +38,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Abril+Fatface&family=Noto+Sans+Marathi:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&family=Instrument+Serif:ital@0;1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Gotu&family=Poppins:wght@400;500;600;700;800;900&family=Abril+Fatface&family=Noto+Sans+Marathi:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&family=Instrument+Serif:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
         :root {
             --bg: #030303;
             --accent: #ffffff;
-            --desire: #ff2d55;
+            --silver: #E0E0E0;
+            --grey: #808080;
         }
 
         body {
@@ -69,9 +70,21 @@
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #ff2d55 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--silver) 50%, var(--accent) 100%);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: shimmerText 5s linear infinite;
+        }
+
+        @keyframes shimmerText {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
         }
 
         /* Tactile Texture Layer (Static Paper) */
@@ -147,7 +160,7 @@
                 opacity: 0.06;
                 filter: blur(4px);
                 transform: scale(1.02);
-                color: var(--desire);
+                color: var(--accent);
             }
         }
 
@@ -182,9 +195,9 @@
         .status-pulse {
             width: 6px;
             height: 6px;
-            background: var(--desire);
+            background: var(--accent);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--desire);
+            box-shadow: 0 0 10px var(--accent);
             animation: pulse 2s infinite;
         }
 
@@ -224,10 +237,10 @@
         }
 
         .loading-text {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Gotu', sans-serif;
             font-weight: 800;
             font-size: 12vw;
-            background: linear-gradient(90deg, #ffffff, #ff2d55, #ffffff);
+            background: linear-gradient(90deg, #ffffff, #808080, #ffffff);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -255,7 +268,7 @@
 
         .loading-bar-inner {
             height: 100%;
-            background: linear-gradient(90deg, #ff2d55, #ff6b35);
+            background: #ffffff;
             animation: loading 1.5s ease-in-out forwards;
         }
 
