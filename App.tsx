@@ -5,15 +5,49 @@ import QuantumString from './components/QuantumString';
 import MarathiRain from './components/MarathiRain';
 
 // Loading Screen Component
-const LoadingScreen: React.FC<{ isLoading: boolean }> = ({ isLoading }) => (
-    <div className={`loading-screen ${!isLoading ? 'hidden' : ''}`}>
-        <div className="loading-text">चव्हाणपाटील</div>
-        <div className="loading-bar">
-            <div className="loading-bar-inner"></div>
+const LoadingScreen: React.FC<{ isLoading: boolean }> = ({ isLoading }) => {
+    const [text, setText] = useState(MARATHI_NAME);
+    const fullText = MARATHI_NAME;
+    const chars = "अआइईउऊऋएऐओऔकखगघचछजझटठडढणतथदधनपफबभमयरलवशषसहळक्षज्ञ!@#$%^&*";
+
+    useEffect(() => {
+        if (!isLoading) return;
+
+        let iterations = 0;
+        const interval = setInterval(() => {
+            setText(fullText
+                .split("")
+                .map((letter, index) => {
+                    if (index < iterations) {
+                        return fullText[index];
+                    }
+                    return chars[Math.floor(Math.random() * chars.length)];
+                })
+                .join("")
+            );
+
+            if (iterations >= fullText.length) {
+                clearInterval(interval);
+            }
+
+            iterations += 1 / 3; // Speed of decoding
+        }, 50);
+
+        return () => clearInterval(interval);
+    }, [isLoading]);
+
+    return (
+        <div className={`loading-screen ${!isLoading ? 'hidden' : ''}`}>
+            <div className="loading-text font-black tracking-widest text-[#ccff00] drop-shadow-[0_0_10px_rgba(204,255,0,0.8)]">
+                {text}
+            </div>
+            <div className="loading-bar">
+                <div className="loading-bar-inner"></div>
+            </div>
+            <p className="mt-6 text-[10px] tracking-[0.5em] text-white/30 uppercase font-medium" style={{ fontFamily: 'Gotu, sans-serif' }}>Igniting the Field</p>
         </div>
-        <p className="mt-6 text-[10px] tracking-[0.5em] text-white/30 uppercase font-medium" style={{ fontFamily: 'Gotu, sans-serif' }}>Igniting the Field</p>
-    </div>
-);
+    );
+};
 
 // Social Icons Data
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
@@ -25,11 +59,11 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
 };
 
 const SOCIAL_STYLES: Record<string, string> = {
-    'Email': 'hover:bg-white hover:border-white hover:text-black',
-    'GitHub': 'hover:bg-white hover:border-white hover:text-black',
-    'LinkedIn': 'hover:bg-white hover:border-white hover:text-black',
-    'X': 'hover:bg-white hover:border-white hover:text-black',
-    'Instagram': 'hover:bg-white hover:border-white hover:text-black'
+    'Email': 'border-[#EA4335] text-[#EA4335] bg-[#EA4335]/10',
+    'GitHub': 'border-white text-white bg-white/10',
+    'LinkedIn': 'border-[#0077b5] text-[#0077b5] bg-[#0077b5]/10',
+    'X': 'border-white text-white bg-white/10',
+    'Instagram': 'border-[#E1306C] text-[#E1306C] bg-[#E1306C]/10'
 };
 
 const App: React.FC = () => {
