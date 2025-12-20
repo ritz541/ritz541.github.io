@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ onImageSelect }) => {
                             style={{ animationDelay: `${index * 100}ms` }}
                         >
                             {/* Image Container - Smaller on mobile */}
-                            <div className="w-14 h-20 md:w-20 md:h-28 overflow-hidden rounded-lg border-2 border-white/5 group-hover:border-[#ff2d55]/60 transition-all duration-500">
+                            <div className="w-14 h-20 md:w-20 md:h-28 overflow-hidden border border-white p-1 transition-all duration-500">
                                 <img
                                     src={art.url}
                                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-active:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
@@ -40,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ onImageSelect }) => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 group-hover:opacity-60 transition-opacity duration-500"></div>
 
                                 {/* Accent Line */}
-                                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#ff2d55] scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 origin-left"></div>
+                                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 origin-left"></div>
                             </div>
 
                             {/* Label - Hidden on mobile */}

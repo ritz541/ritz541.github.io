@@ -34,7 +34,6 @@ const App: React.FC = () => {
     const [scrollY, setScrollY] = useState(0);
     const [showMusic, setShowMusic] = useState(false);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    const [showWatcher, setShowWatcher] = useState(false);
     const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -93,28 +92,34 @@ const App: React.FC = () => {
                             CLOSE
                         </button>
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <img
-                                src={enlargedImage}
-                                className="max-w-full max-h-[80vh] object-contain rounded-lg"
-                                alt="Enlarged Artifact"
-                            />
+                            <div className="border border-white p-2 inline-block">
+                                <img
+                                    src={enlargedImage}
+                                    className="max-w-full max-h-[80vh] object-contain"
+                                    alt="Enlarged Artifact"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             )}
 
+
+
             {/* Atmospheric Ghost: Parallax side gaze */}
             <div
-                className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-[0.02] grayscale contrast-125 transition-transform duration-500 ease-out"
+                className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-[0.05] grayscale contrast-125 transition-transform duration-500 ease-out p-6"
                 style={{
                     transform: `translate(${mousePos.x * 0.05}px, ${scrollY * -0.02}px) scale(1.05)`,
                 }}
             >
-                <img
-                    src={PORTRAIT_SIDE}
-                    alt=""
-                    className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full border border-white/30 p-2">
+                    <img
+                        src={PORTRAIT_SIDE}
+                        alt=""
+                        className="w-full h-full object-cover"
+                    />
+                </div>
             </div>
 
             {/* Sensual Music Player Toggle - Compact on mobile */}
@@ -208,8 +213,6 @@ const App: React.FC = () => {
                     <div className="flex flex-col items-center justify-center gap-4 md:gap-12 text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.5em] text-white/40 font-bold uppercase mt-12">
                         <div
                             className="flex items-center gap-3 cursor-help relative group"
-                            onMouseEnter={() => setShowWatcher(true)}
-                            onMouseLeave={() => setShowWatcher(false)}
                         >
                             <div className="status-pulse"></div>
                             <span className="text-center">DIGITALLY AVAILABLE</span>
