@@ -1,47 +1,45 @@
-
-import { Project, Experience } from './types';
-
-export const MARATHI_NAME = "चव्हाणपाटील";
-export const FULL_NAME = "Ritesh Chavan Patil";
-export const LOCATION = "Parewadi / Future Fields";
-
-// Local image assets
-export const PORTRAIT_SIDE = "/me-1.jpg";
-export const PORTRAIT_FRONT = "/me-2.jpg";
-export const IMAGE_FIELD = "/me-3.jpg";
+export const NAME = "Ritesh Chavan Patil";
+export const LOCATION = "Parewadi";
+export const EMAIL = "riteshchavan@duck.com";
 
 export const SOCIAL_LINKS = [
-    { name: 'Email', url: 'mailto:riteshchavan@duck.com' },
-    { name: 'GitHub', url: 'https://github.com/ritz541' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/riteshchavanpatil/' },
-    { name: 'X', url: 'https://x.com/ritzchavanpatil' },
-    { name: 'Instagram', url: 'https://instagram.com/ritzchavanpatil' }
+    { name: 'X → @ritzchavanpatil', url: 'https://x.com/ritzchavanpatil' },
+    { name: 'Instagram → ritzchavanpatil', url: 'https://instagram.com/ritzchavanpatil' },
+    { name: 'LinkedIn → riteshchavanpatil', url: 'https://www.linkedin.com/in/riteshchavanpatil/' },
+    { name: 'GitHub → ritz541', url: 'https://github.com/ritz541' },
+    { name: 'Medium → @riteshshivajichavan', url: 'https://medium.com/@riteshshivajichavan' },
+    { name: 'Email → riteshchavan@duck.com', url: 'mailto:riteshchavan@duck.com' }
 ];
 
-export const YOUTUBE_PLAYLIST_EMBED = "https://www.youtube-nocookie.com/embed/videoseries?list=PLvGJjWinfBG2G4WVlEb7LsyAIpd9jDJi-&modestbranding=1&rel=0";
-export const YOUTUBE_PLAYLIST_DIRECT = "https://music.youtube.com/playlist?list=PLvGJjWinfBG2G4WVlEb7LsyAIpd9jDJi-";
-
-export const PROJECTS: Project[] = [
-    {
-        id: 1,
-        title: "Sensory Archives",
-        category: "Digital Intimacy",
-        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80",
-        description: "Capturing the friction between skin and screen."
-    }
+export const PROJECTS = [
+    { name: 'Dreamli → share your deepest secrets', url: 'https://dreamli.app' },
+    { name: 'Human API → i built this human', url: 'https://human.chavanpatil.com' }
 ];
 
-export const EXPERIENCES: Experience[] = [
+export interface BlogPost {
+    id: string;
+    title: string;
+    date: string;
+    excerpt: string;
+    content: string;
+    tags: string[];
+}
+
+export const BLOG_POSTS: BlogPost[] = [
     {
-        year: "PRESENT",
-        role: "Radical Autonomy",
-        company: "Private Practice",
-        description: "Living in a state of constant desire and digital creation."
+        id: "1",
+        title: "Hello World",
+        date: "December 26, 2025",
+        excerpt: "Welcome to my personal website. Here I'll share my thoughts and experiences.",
+        content: "Welcome to my personal website.\n\nThis is where I'll be sharing my thoughts, experiences, and projects. Feel free to explore.",
+        tags: ["intro", "personal"]
     },
     {
-        year: "2026",
-        role: "Harvester of the Earth",
-        company: "The Soil",
-        description: "Transitioning from bits to beans. The ultimate return to the land."
+        id: "2", 
+        title: "Thinking About Design",
+        date: "December 25, 2025",
+        excerpt: "Some thoughts on simplicity in design.",
+        content: "I've been thinking a lot about design lately.\n\nSimple is better. Less is more.",
+        tags: ["design", "thoughts"]
     }
 ];
