@@ -27,7 +27,7 @@
 }
 
 body {
-    font-family: 'Delius Unicase', cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--bg-color);
@@ -36,6 +36,10 @@ body {
     font-weight: 400;
     font-size: 16px;
     min-height: 100vh;
+}
+
+body.font-loaded {
+    font-family: 'Delius Unicase', cursive;
 }
 
 .container {
