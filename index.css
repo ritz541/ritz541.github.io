@@ -116,6 +116,63 @@ a {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* === Background Mesh Glow === */
+.mesh-glow-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.mesh-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.8;
+}
+
+.orb-1 {
+    width: 60vw;
+    height: 60vw;
+    top: -20%;
+    left: -10%;
+    background: var(--mesh-glow-1);
+    animation: float1 20s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+    width: 50vw;
+    height: 50vw;
+    bottom: -10%;
+    right: -10%;
+    background: var(--mesh-glow-2);
+    animation: float2 24s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(10%, 15%) scale(1.1);
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(-15%, -10%) scale(0.9);
+    }
+}
+
 /* === Bento Grid System === */
 .bento-grid {
     display: grid;

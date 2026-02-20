@@ -39,6 +39,11 @@ const ArrowRightIcon = () => (
 const App: React.FC = () => {
     return (
         <>
+            <div className="mesh-glow-wrapper">
+                <div className="mesh-orb orb-1"></div>
+                <div className="mesh-orb orb-2"></div>
+            </div>
+
             <Navbar />
 
             <main className="container">
