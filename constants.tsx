@@ -3,17 +3,33 @@ export const LOCATION = "Parewadi";
 export const EMAIL = "riteshchavan@duck.com";
 
 export const SOCIAL_LINKS = [
-    { name: 'X → @ritzchavanpatil', url: 'https://x.com/ritzchavanpatil' },
-    { name: 'Instagram → ritzchavanpatil', url: 'https://instagram.com/ritzchavanpatil' },
-    { name: 'LinkedIn → riteshchavanpatil', url: 'https://www.linkedin.com/in/riteshchavanpatil/' },
-    { name: 'GitHub → ritz541', url: 'https://github.com/ritz541' },
-    { name: 'Medium → @riteshshivajichavan', url: 'https://medium.com/@riteshshivajichavan' },
-    { name: 'Email → riteshchavan@duck.com', url: 'mailto:riteshchavan@duck.com' }
+    { name: 'X (@ritzchavanpatil)', url: 'https://x.com/ritzchavanpatil' },
+    { name: 'Instagram (ritzchavanpatil)', url: 'https://instagram.com/ritzchavanpatil' },
+    { name: 'LinkedIn (riteshchavanpatil)', url: 'https://www.linkedin.com/in/riteshchavanpatil/' },
+    { name: 'GitHub (ritz541)', url: 'https://github.com/ritz541' },
+    { name: 'Medium (@riteshshivajichavan)', url: 'https://medium.com/@riteshshivajichavan' },
+    { name: 'Email (riteshchavan@duck.com)', url: 'mailto:riteshchavan@duck.com' }
 ];
 
 export const PROJECTS = [
-    { name: 'Dreamli → share your deepest secrets', url: 'https://dreamli.app' },
-    { name: 'Human API → i built this human', url: 'https://human.chavanpatil.com' }
+    { 
+        name: 'Dreamli', 
+        description: 'A mobile feed UI design platform showcasing modern interface aesthetics',
+        url: 'https://dreamli.app',
+        tags: ['Design', 'UI/UX', 'Mobile']
+    },
+    { 
+        name: 'Human API', 
+        description: 'The Human Oracle - an interactive AI chat interface for meaningful conversations',
+        url: 'https://human.chavanpatil.com',
+        tags: ['AI', 'Chat', 'Interactive']
+    },
+    { 
+        name: 'TheFlower.xyz', 
+        description: 'Satirical newsroom publishing fictional stories with straight-faced editorial style',
+        url: 'https://theflower.xyz',
+        tags: ['Satire', 'News', 'Content']
+    }
 ];
 
 export interface BlogPost {

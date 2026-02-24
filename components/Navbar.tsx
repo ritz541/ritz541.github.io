@@ -1,12 +1,13 @@
 import React from 'react';
+import { NAME } from '../constants';
 
 const Navbar: React.FC = () => {
     type Theme = 'dark' | 'light';
-    const [theme, setTheme] = React.useState<Theme>('dark');
+    const [theme, setTheme] = React.useState<Theme>('light');
 
     React.useEffect(() => {
         const savedTheme = localStorage.getItem('theme') as Theme | null;
-        const initialTheme = savedTheme || 'dark';
+        const initialTheme = savedTheme || 'light';
         setTheme(initialTheme);
         document.documentElement.setAttribute('data-theme', initialTheme);
     }, []);
@@ -19,22 +20,16 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="premium-nav">
-            <div className="container flex justify-between items-center">
-                <div className="nav-brand">
-                    RCP.
-                </div>
+        <nav className="simple-nav">
+            <div className="container nav-inner">
+                <a href="/" className="brand-link">{NAME}</a>
                 <button
-                    className="btn-icon"
+                    className="theme-toggle"
                     onClick={toggleTheme}
                     aria-label="Toggle theme"
                     title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
                 >
-                    {theme === 'dark' ? (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
-                    ) : (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
-                    )}
+                    {theme === 'dark' ? 'Light' : 'Dark'}
                 </button>
             </div>
         </nav>
