@@ -4,17 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0C0C0E" media="(prefers-color-scheme: dark)">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <title>Ritesh Chavan Patil</title>
-    <meta name="description" content="Personal website of Ritesh Chavan Patil">
+    <title>Ritesh Chavan Patil — Product Engineer</title>
+    <meta name="description" content="Independent product engineer. I build internet products end to end: product direction, interface design, and frontend systems that ship fast and age well.">
     <meta name="author" content="Ritesh Chavan Patil">
+
+    <meta property="og:title" content="Ritesh Chavan Patil — Product Engineer">
+    <meta property="og:description" content="I build internet products end to end.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chavanpatil.com">
+    <meta name="twitter:card" content="summary">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <link rel="stylesheet" href="/index.css">
@@ -23,7 +30,8 @@
         // Set theme immediately to prevent flash
         (function () {
             const savedTheme = localStorage.getItem('theme');
-            const theme = savedTheme || 'light';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark === false ? 'light' : 'dark');
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
