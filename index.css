@@ -38,6 +38,10 @@
     padding: 0;
 }
 
+a, button, [role="button"] {
+    cursor: pointer;
+}
+
 body {
     min-height: 100vh;
     background: var(--bg);
@@ -58,7 +62,6 @@ body {
     align-items: center;
     position: relative;
     text-decoration: none;
-    cursor: pointer;
 }
 
 .ticker::before,
@@ -100,7 +103,6 @@ body {
     text-transform: uppercase;
     padding: 0 1.5rem;
     flex-shrink: 0;
-    cursor: default;
     line-height: 1.7rem;
 }
 

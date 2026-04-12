@@ -6,6 +6,21 @@ import './index.css';
 const App: React.FC = () => {
     const year = new Date().getFullYear();
 
+    React.useEffect(() => {
+        const size = 32;
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+            ctx.font = `${size - 4}px serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🌸', size / 2, size / 2);
+            document.body.style.cursor = `url(${canvas.toDataURL()}) 16 16, auto`;
+        }
+    }, []);
+
     const tickerHeadlines = [
         "COFFEE MACHINE ACQUIRES SENTIENCE",
         "PLANT REFUSES TO GROW UNTIL IT RECEIVES AN APOLOGY",
