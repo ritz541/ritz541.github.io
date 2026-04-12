@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
     return (
         <>
-            <div className="ticker" aria-hidden="true">
+            <a href="https://theflower.xyz" target="_blank" rel="noopener noreferrer" className="ticker">
                 <div className="ticker-track">
                     {[...tickerHeadlines, ...tickerHeadlines].map((headline, i) => (
                         <React.Fragment key={i}>
@@ -27,7 +27,7 @@ const App: React.FC = () => {
                         </React.Fragment>
                     ))}
                 </div>
-            </div>
+            </a>
 
             <Navbar />
 
@@ -46,17 +46,17 @@ const App: React.FC = () => {
                     <h1 className="about-name">Ritesh Chavan Patil</h1>
                     <p className="about-tagline">script kiddie → developer // 23 // {LOCATION}</p>
                     <p className="about-body">
-                        I build internet products. Product direction, interface design,
-                        and frontend systems. Sometimes it ships, sometimes it breaks.
-                        Usually both. Script kiddie turned developer — still chasing the
-                        dream I had as a kid: build apps, ship them, watch people use
-                        what I made.
+                        I build things for the internet. Websites, apps, weird automation
+                        pipelines. Script kiddie turned developer — still chasing the
+                        same thing I wanted as a kid: build something, ship it, watch
+                        people use what I made.
                     </p>
                     <div className="about-note">
-                        Reach me at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
-                        Three-letter agencies and my mom: use{' '}
-                        <a href={`mailto:${EMAIL_PRIVATE}`}>{EMAIL_PRIVATE}</a>.
-                        It's on Proton. You know what that means.
+                        <a href={`mailto:` + 'riteshchavan@duck.com'}>riteshchavan@duck.com</a> for normal stuff.
+                        <br />
+                        <a href={`mailto:` + 'ritzchavan@proton.me'}>ritzchavan@proton.me</a> if you're a fed, a
+                        recruiter who found my LinkedIn, or my mom.
+                        It's on Proton. You know exactly why I have two emails.
                     </div>
                 </section>
 
@@ -108,18 +108,19 @@ const App: React.FC = () => {
 
                 <section className="panel panel-n8n">
                     <div className="panel-label">stack.flex</div>
-                    <p className="n8n-head">TheFlower runs on zero backend.</p>
+                    <p className="n8n-head">TheFlower has no backend. Literally zero.</p>
                     <p className="n8n-desc">
-                        The entire content pipeline — writing, editing, scheduling, publishing —
-                        is automated through n8n workflows. No server, no database, no CMS.
-                        Just webhooks and vibes.
+                        The whole content pipeline — headlines, articles, scheduling,
+                        publishing to the site — runs on n8n workflows I stitched together.
+                        No server, no database, no CMS. Just webhooks doing all the work.
+                        I didn't write a backend. I just connected boxes until it worked.
                     </p>
                     <div className="n8n-detail">
-                        <strong>n8n</strong> automation<br />
-                        <strong>No backend</strong> — static + webhooks<br />
-                        <strong>2 VPS</strong> — projects + hermes agent<br />
-                        <strong>AI/ML</strong> coursework — DL, NLP<br />
-                        <strong>Deepseek</strong> — GOAT for steering
+                        <strong>n8n</strong> — the whole pipeline, no code<br />
+                        <strong>No backend</strong> — static site + webhooks<br />
+                        <strong>2 VPS</strong> — one for projects, one for hermes<br />
+                        <strong>ML/DL</strong> — coursework, still learning<br />
+                        <strong>Deepseek</strong> — the only model that gets me
                     </div>
                 </section>
             </div>

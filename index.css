@@ -1,22 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-    --bg: #0A0812;
-    --panel: #120E1E;
-    --panel-hover: #1A1428;
-    --border: #221C38;
-    --border-glow: rgba(168, 85, 247, 0.2);
-    --text: #E8E0F4;
-    --text-dim: #A89CC0;
-    --muted: #6B5F82;
-    --accent: #FF2D78;
-    --accent-purple: #A855F7;
-    --accent-glow: rgba(255, 45, 120, 0.12);
-    --tag-bg: rgba(168, 85, 247, 0.12);
-    --tag-border: rgba(168, 85, 247, 0.3);
-}
-
-[data-theme='light'] {
     --bg: #F0EAF4;
     --panel: #FFFFFF;
     --panel-hover: #F8F2FC;
@@ -25,11 +9,27 @@
     --text: #1A1028;
     --text-dim: #5A4C70;
     --muted: #8A7C9A;
-    --accent: #D41B64;
+    --accent: #D94CB8;
     --accent-purple: #7C3AED;
-    --accent-glow: rgba(212, 27, 100, 0.08);
+    --accent-glow: rgba(217, 76, 184, 0.08);
     --tag-bg: rgba(124, 58, 237, 0.08);
     --tag-border: rgba(124, 58, 237, 0.25);
+}
+
+[data-theme='dark'] {
+    --bg: #0A0812;
+    --panel: #120E1E;
+    --panel-hover: #1A1428;
+    --border: #221C38;
+    --border-glow: rgba(168, 85, 247, 0.2);
+    --text: #E8E0F4;
+    --text-dim: #A89CC0;
+    --muted: #6B5F82;
+    --accent: #FA59DB;
+    --accent-purple: #A855F7;
+    --accent-glow: rgba(250, 89, 219, 0.12);
+    --tag-bg: rgba(168, 85, 247, 0.12);
+    --tag-border: rgba(168, 85, 247, 0.3);
 }
 
 * {
@@ -56,12 +56,40 @@ body {
     height: 1.7rem;
     display: flex;
     align-items: center;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ticker::before,
+.ticker::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ticker::before {
+    left: 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+}
+
+.ticker::after {
+    right: 0;
+    background: linear-gradient(to left, var(--accent), transparent);
 }
 
 .ticker-track {
     display: flex;
     white-space: nowrap;
-    animation: scroll-left 50s linear infinite;
+    animation: scroll-left 60s linear infinite;
+}
+
+.ticker:hover .ticker-track {
+    animation-play-state: paused;
 }
 
 .ticker-item {
@@ -72,12 +100,17 @@ body {
     text-transform: uppercase;
     padding: 0 1.5rem;
     flex-shrink: 0;
+    cursor: default;
+    line-height: 1.7rem;
 }
 
 .ticker-sep {
     padding: 0 0.4rem;
     opacity: 0.5;
     flex-shrink: 0;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    vertical-align: middle;
 }
 
 @keyframes scroll-left {

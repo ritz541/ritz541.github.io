@@ -3,11 +3,11 @@ import { NAME } from '../constants';
 
 const Navbar: React.FC = () => {
     type Theme = 'dark' | 'light';
-    const [theme, setTheme] = React.useState<Theme>('dark');
+    const [theme, setTheme] = React.useState<Theme>('light');
 
     React.useEffect(() => {
         const savedTheme = localStorage.getItem('theme') as Theme | null;
-        const initialTheme = savedTheme || 'dark';
+        const initialTheme = savedTheme || 'light';
         setTheme(initialTheme);
         document.documentElement.setAttribute('data-theme', initialTheme);
     }, []);

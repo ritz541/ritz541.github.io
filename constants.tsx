@@ -15,22 +15,22 @@ export const SOCIAL_LINKS = [
 export const PROJECTS = [
     { 
         name: 'Dreamli', 
-        byline: 'a mobile feed that doesn\'t make you want to throw your phone. surprisingly.',
-        description: 'A mobile feed UI design platform built to actually feel good. Intuitive gestures, smooth transitions, and visuals that don\'t assault your retinas.',
+        byline: 'a mobile feed that doesn\'t make you want to throw your phone.',
+        description: 'Mobile feed UI design. Smooth gestures, clean transitions, doesn\'t look like it was designed in 2015. The kind of app UI you actually want to scroll through.',
         url: 'https://dreamli.app',
         tags: ['Design', 'UI/UX', 'Mobile']
     },
     { 
         name: 'TheFlower.xyz', 
-        byline: 'independent satirical desk. all the news that\'s fit to fabricate.',
-        description: 'A satirical newsroom publishing fictional stories with the deadpan seriousness of a broadsheet. Yesterday\'s headline: "COFFEE MACHINE ACQUIRES SENTIENCE, IMMEDIATELY REQUESTS ANNUAL LEAVE."',
+        byline: 'all the news that\'s fit to fabricate.',
+        description: 'A satirical newsroom that publishes completely made-up stories with the straight face of a real broadsheet. Yesterday\'s headline: "COFFEE MACHINE ACQUIRES SENTIENCE, IMMEDIATELY REQUESTS ANNUAL LEAVE." The whole thing runs on n8n. No backend. I just connected boxes until articles started appearing.',
         url: 'https://theflower.xyz',
-        tags: ['Satire', 'News', 'Content']
+        tags: ['Satire', 'News', 'n8n']
     },
     { 
         name: 'Human API', 
-        byline: 'the human oracle. we taught a machine empathy. it\'s still learning.',
-        description: 'An interactive AI chat interface for conversations that actually go somewhere. Not another chatGPT wrapper. Mostly.',
+        byline: 'we taught a machine empathy. it\'s still learning.',
+        description: 'AI chat interface for conversations that actually go somewhere. Not another ChatGPT wrapper. Mostly. It talks like a person sometimes, which is either impressive or concerning.',
         url: 'https://human.chavanpatil.com',
         tags: ['AI', 'Chat', 'Interactive']
     }
