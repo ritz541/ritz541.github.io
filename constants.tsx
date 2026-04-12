@@ -14,19 +14,22 @@ export const SOCIAL_LINKS = [
 export const PROJECTS = [
     { 
         name: 'Dreamli', 
-        description: 'A mobile feed UI design platform showcasing modern interface aesthetics',
+        byline: 'a mobile feed that doesn\'t make you want to throw your phone. surprisingly.',
+        description: 'A mobile feed UI design platform built to actually feel good. Intuitive gestures, smooth transitions, and visuals that don\'t assault your retinas.',
         url: 'https://dreamli.app',
         tags: ['Design', 'UI/UX', 'Mobile']
     },
     { 
         name: 'Human API', 
-        description: 'The Human Oracle - an interactive AI chat interface for meaningful conversations',
+        byline: 'the human oracle. we taught a machine empathy. it\'s still learning.',
+        description: 'An interactive AI chat interface for conversations that actually go somewhere. Not another chatGPT wrapper. Mostly.',
         url: 'https://human.chavanpatil.com',
         tags: ['AI', 'Chat', 'Interactive']
     },
     { 
         name: 'TheFlower.xyz', 
-        description: 'Satirical newsroom publishing fictional stories with straight-faced editorial style',
+        byline: 'independent satirical desk. all the news that\'s fit to fabricate.',
+        description: 'A satirical newsroom publishing fictional stories with the deadpan seriousness of a broadsheet. Yesterday\'s headline: "COFFEE MACHINE ACQUIRES SENTIENCE, IMMEDIATELY REQUESTS ANNUAL LEAVE."',
         url: 'https://theflower.xyz',
         tags: ['Satire', 'News', 'Content']
     }

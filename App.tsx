@@ -18,26 +18,28 @@ const App: React.FC = () => {
             <Navbar />
 
             <main className="container site-main">
-                <section className="hero">
-                    <p className="hero-role">Independent Product Engineer</p>
-                    <h1 className="hero-name">{NAME}</h1>
-                    <p className="hero-copy">
-                        I build internet products end to end: product direction, interface design,
-                        and frontend systems that ship fast and age well.
+                <header className="masthead">
+                    <span className="masthead-flower" aria-hidden="true">🌸</span>
+                    <h1 className="masthead-name">{NAME}</h1>
+                    <p className="masthead-tagline">
+                        I build internet products. Product direction, interface design,
+                        and frontend systems. Sometimes it ships, sometimes it breaks.
+                        Usually both.
                     </p>
-
-                    <div className="hero-meta" aria-label="Contact details">
-                        <span>{LOCATION}</span>
-                        <span className="meta-sep" aria-hidden="true">/</span>
-                        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-                    </div>
-                </section>
+                    <p className="masthead-details">
+                        {LOCATION} / <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                    </p>
+                </header>
 
                 <section className="grid">
-                    <section className="panel panel-main" aria-labelledby="work-heading">
+                    <section className="panel panel-main">
+                        <div className="section-header">
+                            <h2>Selected Work</h2>
+                        </div>
+
                         <div className="panel-head">
-                            <h2 id="work-heading">Selected Work</h2>
-                            <p>Current projects and active experiments.</p>
+                            <h2>Current Projects & Active Experiments</h2>
+                            <p>things i've been building, breaking, and rebuilding.</p>
                         </div>
 
                         <div className="work-list">
@@ -48,6 +50,7 @@ const App: React.FC = () => {
                                             {project.name}
                                         </a>
                                     </h3>
+                                    <p className="work-byline">{project.byline}</p>
                                     <a
                                         href={project.url}
                                         target="_blank"
@@ -68,10 +71,14 @@ const App: React.FC = () => {
                         </div>
                     </section>
 
-                    <aside className="panel panel-side" aria-labelledby="links-heading">
+                    <aside className="panel panel-side">
+                        <div className="section-header">
+                            <h2>Links</h2>
+                        </div>
+
                         <div className="panel-head">
-                            <h2 id="links-heading">Links</h2>
-                            <p>Where to find me online.</p>
+                            <h2>Elsewhere</h2>
+                            <p>where to find me when i'm not here.</p>
                         </div>
 
                         <ul className="links-list">
@@ -87,7 +94,7 @@ const App: React.FC = () => {
                 </section>
 
                 <footer className="site-footer">
-                    <p>© {year} {NAME}</p>
+                    <p>© {year} {NAME}. All rights reserved. Some wrongs too.</p>
                 </footer>
             </main>
         </>

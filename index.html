@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0C0C0E" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#111110">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <title>Ritesh Chavan Patil — Product Engineer</title>
-    <meta name="description" content="Independent product engineer. I build internet products end to end: product direction, interface design, and frontend systems that ship fast and age well.">
+    <title>Ritesh Chavan Patil</title>
+    <meta name="description" content="i do code. sometimes it works.">
     <meta name="author" content="Ritesh Chavan Patil">
 
-    <meta property="og:title" content="Ritesh Chavan Patil — Product Engineer">
-    <meta property="og:description" content="I build internet products end to end.">
+    <meta property="og:title" content="Ritesh Chavan Patil">
+    <meta property="og:description" content="i do code. sometimes it works.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chavanpatil.com">
     <meta name="twitter:card" content="summary">
@@ -21,13 +20,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <link rel="stylesheet" href="/index.css">
 
     <script>
-        // Set theme immediately to prevent flash
         (function () {
             const savedTheme = localStorage.getItem('theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -41,7 +39,6 @@
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
     <script>
-        // Font loading detection
         document.fonts.ready.then(function () {
             document.body.classList.add('font-loaded');
         });
