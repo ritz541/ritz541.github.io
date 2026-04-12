@@ -1,6 +1,7 @@
 export const NAME = "Ritesh Chavan Patil";
 export const LOCATION = "Parewadi";
 export const EMAIL = "riteshchavan@duck.com";
+export const EMAIL_PRIVATE = "ritzchavan@proton.me";
 
 export const SOCIAL_LINKS = [
     { name: 'X (@ritzchavanpatil)', url: 'https://x.com/ritzchavanpatil' },
@@ -20,18 +21,18 @@ export const PROJECTS = [
         tags: ['Design', 'UI/UX', 'Mobile']
     },
     { 
-        name: 'Human API', 
-        byline: 'the human oracle. we taught a machine empathy. it\'s still learning.',
-        description: 'An interactive AI chat interface for conversations that actually go somewhere. Not another chatGPT wrapper. Mostly.',
-        url: 'https://human.chavanpatil.com',
-        tags: ['AI', 'Chat', 'Interactive']
-    },
-    { 
         name: 'TheFlower.xyz', 
         byline: 'independent satirical desk. all the news that\'s fit to fabricate.',
         description: 'A satirical newsroom publishing fictional stories with the deadpan seriousness of a broadsheet. Yesterday\'s headline: "COFFEE MACHINE ACQUIRES SENTIENCE, IMMEDIATELY REQUESTS ANNUAL LEAVE."',
         url: 'https://theflower.xyz',
         tags: ['Satire', 'News', 'Content']
+    },
+    { 
+        name: 'Human API', 
+        byline: 'the human oracle. we taught a machine empathy. it\'s still learning.',
+        description: 'An interactive AI chat interface for conversations that actually go somewhere. Not another chatGPT wrapper. Mostly.',
+        url: 'https://human.chavanpatil.com',
+        tags: ['AI', 'Chat', 'Interactive']
     }
 ];
 

@@ -21,16 +21,18 @@ const Navbar: React.FC = () => {
 
     return (
         <nav className="simple-nav">
-            <div className="container nav-inner">
-                <a href="/" className="brand-link">{NAME}</a>
-                <button
-                    className="theme-toggle"
-                    onClick={toggleTheme}
-                    aria-label="Toggle theme"
-                    title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-                >
-                    {theme === 'dark' ? 'Light' : 'Dark'}
-                </button>
+            <div className="nav-inner">
+                <a href="/" className="brand-link">~/chavanpatil</a>
+                <div className="nav-status">
+                    <span className="status-dot">online</span>
+                    <button
+                        className="theme-toggle"
+                        onClick={toggleTheme}
+                        aria-label="Toggle theme"
+                    >
+                        {theme === 'dark' ? '☀' : '☾'}
+                    </button>
+                </div>
             </div>
         </nav>
     );
